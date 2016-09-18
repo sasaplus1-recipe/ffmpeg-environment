@@ -21,7 +21,7 @@ Vagrant.configure(2) do |config|
 
     # update
     sudo apt-get update
-    sudo apt-get upgrade
+    sudo apt-get --yes upgrade
 
     # download binary
     wget -q https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-64bit-static.tar.xz
