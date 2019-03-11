@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure(2) do |config|
-  config.vm.box = 'ubuntu/trusty64'
+  config.vm.box = 'ubuntu/xenial64'
 
   config.vm.provider 'virtualbox' do |vb|
     vb.memory = '4096'
@@ -24,12 +24,12 @@ Vagrant.configure(2) do |config|
     sudo apt-get --yes upgrade
 
     # download binary
-    wget -q https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-64bit-static.tar.xz
+    wget -q https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz
 
     # extract
-    tar xvf ffmpeg-release-64bit-static.tar.xz
+    tar xvf ffmpeg-release-*.tar.xz
 
     # setup PATH
-    echo "export PATH=$(find $HOME -maxdepth 1 -type d -name 'ffmpeg-*-64bit-static'):$PATH" >> $HOME/.bashrc
+    echo "export PATH=$(find $HOME -maxdepth 1 -type d -name 'ffmpeg-release-*'):$PATH" >> $HOME/.bashrc
   SHELL
 end
